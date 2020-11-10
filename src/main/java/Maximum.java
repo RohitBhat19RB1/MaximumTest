@@ -1,28 +1,6 @@
 public class Maximum {
-    public Integer maximumInteger(Integer x,Integer y,Integer z) {
-        Integer maximum = x;
-        if(y.compareTo(maximum)>0){
-            maximum=y;
-        }
-        if(z.compareTo(maximum)>0){
-            maximum=z;
-        }
-        return maximum;
-    }
-
-    public Float maximumFloat(Float x,Float y,Float z) {
-        Float maximum=x;
-        if(y.compareTo(maximum)>0){
-            maximum=y;
-        }
-        if(z.compareTo(maximum)>0){
-            maximum=z;
-        }
-        return maximum;
-    }
-
-    public String maximumString(String x, String y, String z) {
-        String maximum=x;
+    public static <T extends Comparable<T>> T checkMaximum(T x,T y,T z){
+        T maximum=x;
         if(y.compareTo(maximum)>0){
             maximum=y;
         }
