@@ -83,19 +83,51 @@ public class MaximumTest {
 
     @Test
     public void givenNIntegers_UsingMoreThanThreeParameters_ShouldReturnMaximumInteger() {
-        Integer maximumResult=maximum.checkMaximum_MoreThan_ThreeParameters(5,7,2,8,9,10);
+        Integer maximumResult=maximum.moreThan_ThreeParameters(5,7,2,8,9,10);
         Integer expectedResult=10;
         Assert.assertEquals(expectedResult,maximumResult);
     }
     @Test
     public void givenNFloats_UsingMoreThanThreeParameters_ShouldReturnMaximumFloat(){
-        Float maximumResult=maximum.checkMaximum_MoreThan_ThreeParameters(7.7f,4.4f,5.5f,9.9f);
+        Float maximumResult=maximum.moreThan_ThreeParameters(7.7f,4.4f,5.5f,9.9f);
         Float expectedResult=9.9f;
         Assert.assertEquals(expectedResult,maximumResult);
     }
     @Test
     public void givenNStrings_UsingMoreThanThreeParameters_ShouldReturnMaximumString(){
-        String maximumResult=maximum.checkMaximum_MoreThan_ThreeParameters("orange","peach","apple","strawberry");
+        String maximumResult=maximum.moreThan_ThreeParameters("orange","peach","apple","strawberry");
         Assert.assertEquals("strawberry",maximumResult);
     }
+
+    @Test
+    public void givenIntegers_UsingThreeParameters_ShouldPrintMaximumInteger() {
+        maximum.printMaximum(5,9,2);
+    }
+
+    @Test
+    public void givenFloats_UsingThreeParameters_ShouldPrintMaximumFloat() {
+        maximum.printMaximum(5.5f,9.7f,2.4f);
+    }
+
+    @Test
+    public void givenStrings_UsingThreeParameters_ShouldPrintMaximumString() {
+        maximum.printMaximum("orange","peach","apple");
+    }
+
+    @Test
+    public void givenIntegers_UsingMoreThanThreeParameters_ShouldPrintMaximumInteger() {
+        maximum.printMaximum(5,9,2,88,45);
+    }
+
+    @Test
+    public void givenFloats_UsingMoreThanThreeParameters_ShouldPrintMaximumFloat() {
+        maximum.printMaximum(5.5f,9.7f,2.4f,102.6f,45.7f);
+    }
+
+    @Test
+    public void givenStrings_UsingMoreThanThreeParameters_ShouldPrintMaximumString() {
+        maximum.printMaximum("orange","peach","apple","pine-apple","pomegranate");
+    }
+
+
 }

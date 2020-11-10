@@ -1,7 +1,9 @@
+import static java.util.Arrays.sort;
+
 public class Maximum {
 
-        public static <T extends Comparable<T>> T checkMaximum(T x,T y,T z){
-            T maximum=x;
+        public static <E extends Comparable<E>> E checkMaximum(E x,E y,E z){
+            E maximum=x;
             if(y.compareTo(maximum)>0){
                 maximum=y;
             }
@@ -11,13 +13,16 @@ public class Maximum {
             return maximum;
         }
 
-    public static <T extends Comparable<T>> T checkMaximum_MoreThan_ThreeParameters(T...elements) {
-        T maximum = elements[0];
-        for(T maximumElement:elements){
-            if(maximumElement.compareTo(maximum)>0){
-                maximum=maximumElement;
-            }
-        }
-        return maximum;
+    @SafeVarargs
+    public static <E extends Comparable<E>> E moreThan_ThreeParameters(E ...elements){
+        sort(elements);
+        return elements[elements.length-1];
     }
+
+    @SafeVarargs
+    public static <E extends Comparable<E>> void printMaximum(E ...elements){
+        E e = moreThan_ThreeParameters(elements);
+        System.out.printf("Maximum %s\n", e);
+    }
+
 }
