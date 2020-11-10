@@ -47,4 +47,21 @@ public class MaximumTest {
         Float expectedResult=8.8f;
         Assert.assertEquals(expectedResult,maximumResult);
     }
+
+    @Test
+    public void givenMaximumString_AsFirstParameter_ShouldReturnMaximumString() {
+        String maximumResult=maximum.maximumString("peach","orange","apple");
+        Assert.assertEquals("peach",maximumResult);
+    }
+    @Test
+    public void givenMaximumString_AsSecondParameter_ShouldReturnMaximumString() {
+        String maximumResult=maximum.maximumString("orange","peach","apple");
+        Assert.assertEquals("peach",maximumResult);
+    }
+
+    @Test
+    public void givenMaximumstring_AsThirdParameter_ShouldReturnMaximumString() {
+        String maximumResult=maximum.maximumString("apple","orange","peach");
+        Assert.assertEquals("peach",maximumResult);
+    }
 }
