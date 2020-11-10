@@ -9,4 +9,15 @@ public class Maximum {
                 maximum=z;
             }
             return maximum;
-        }}
+        }
+
+    public static <T extends Comparable<T>> T checkMaximum_MoreThan_ThreeParameters(T...elements) {
+        T maximum = elements[0];
+        for(T maximumElement:elements){
+            if(maximumElement.compareTo(maximum)>0){
+                maximum=maximumElement;
+            }
+        }
+        return maximum;
+    }
+}
